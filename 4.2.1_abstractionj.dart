@@ -2,6 +2,12 @@
 
 abstract class Student{
   void studying();
+  void assignment(){
+    print('assignment');
+  }
+  void attendClass(){
+    print('Attend the class');
+  }
 }
 
 class Person extends Student{
@@ -14,8 +20,9 @@ class Person extends Student{
     print('Eating');
   }
 }
-
-class Businessmen extends Student{
+///interface:
+///implements keyword:have to override every method af abstract class weither having body or not.
+class Businessmen implements Student{
   String org;
   Businessmen(this.org);
   @override
@@ -24,13 +31,25 @@ class Businessmen extends Student{
   print('lying down in bed');
   }
 
+  @override
+  void assignment() {
+    print('assignmnet done');
+  }
+
+  @override
+  void attendClass() {
+    print('attendClass properly');
+  }
+
 }
-main(){
+ main(){
   Person p=Person("Thalha", 25);
   p.studying();
+  p.assignment();
 
   Businessmen B=Businessmen('Dart');
   B.studying();
+  B.assignment();
 
   
 }
